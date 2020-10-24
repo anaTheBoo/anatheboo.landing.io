@@ -51,25 +51,129 @@ $gapple: #a99458;
 $berry: #610745;
 $violet: #360727;
 
-$visitOverlay: #0F0F0F;
+$visitOverlay: #03021B;
 
 html {
-	--menu-color: #0F0F0F;
+	--page-color: #03021B;
+/* 	--visit: $boldBlue;
+	--play: $berry;
+	--create: $gapple; */
 	font-family: 'Raleway', sans-serif;
 	font: 100% 'Raleway', sans-serif;
 }
 
-body.noScroll {
-  overflow: hidden;
+body {
+	line-height: 1.5;
+  	overflow-y: hidden;
+	padding-top:  5vh;
+	position: fixed;
+}
+
+body.no-scroll {
+	overflow: hidden;
+	position: fixed;
 }
 
 .menu-button {
-	position: absolute;
-	right: 5vw;
-	top:  1.5vh;
-	z-index: 3;
+	cursor: pointer;
+	left: 90.5vw;
+	position: fixed;
+	top:  1vh;
+	z-index: 7;
+}
+
+.menu-button svg {
+	stroke: var(--page-color);
 	height: 1rem;
 	width:  1.25rem;
+}
+
+.skip-btn {
+	background: var(--page-color);
+	color: #fff;
+	position: absolute;
+	top: -2rem;
+}
+
+.skip-btn:focus {
+	top: 0;
+	z-index: 10;
+}
+
+.swiper-pagination-bullets {
+    border-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	left: 91vw;
+	opacity: .7;
+    padding: 0 3px;
+	position: fixed;
+	top: 10vh;
+	z-index: 4;
+}
+
+.create-swiper-pagination {opacity: .85}
+
+.swiper-pagination-bullet {
+	background: #fff;
+	height: 12px;
+	margin: 1rem 0;
+	width: 12px;
+}
+
+.swiper-pagination-bullet:first-of-type {margin: 8px 0 1rem;}
+.swiper-pagination-bullet:last-of-type {margin: 1rem 0 8px;}
+
+
+.visit-swiper-pagination {
+    background: $darkBlue;
+}
+
+.play-swiper-pagination {
+    background: $violet;
+}
+
+.create-swiper-pagination {
+    background: $gapple;
+}
+
+.hidden {
+	display: none;
+}
+
+.loading {
+	background: $darkBlue;
+	height:  100%;
+	position: fixed;
+	top: 0;
+	width:  100%;
+	z-index: 50;
+}
+
+.loading img {
+    display: block;
+    position: relative;
+    max-width: 30vw;
+    margin: auto;
+    top: 25%;
+}
+
+.loading.hide {
+	animation: HideLoading 1s forwards;
+}
+
+@keyframes HideLoading {
+	0% {opacity: 1}
+	99% {opacity: 0}
+	100% {
+		opacity: 0;
+		display: none;
+	}
+}
+
+.a11y-text {
+	position: absolute;
+	top: -100%;
 }
 
 /*--------------------------------------------------------------->END UNIVERSAL STYLES*/
@@ -86,9 +190,14 @@ body.noScroll {
 	overflow: hidden;
 	padding-top: 5vh;
 	position: absolute;
-	top:  0;
+	top:  -110vh;
+	transition: top .3s ease-in-out;
 	width: 100vw;
-	z-index: 2;
+	z-index: 6;
+}
+
+.visual-nav.visible {
+	top: 0;
 }
 
 .visual-nav {
@@ -127,7 +236,7 @@ body.noScroll {
 		width: 100%;
 	}
 
-	.play-visual-link .background-img {
+	.play-link .background-img {
 		bottom: unset;
 		top: -89%;
 	}
@@ -163,6 +272,7 @@ body.noScroll {
 	}
 
 	.author {
+		font-weight: bold;
 		height: 5vh;
 		line-height: 5vh;
 	}
@@ -177,8 +287,239 @@ body.noScroll {
 ------------------------------>MAIN CONTENT--------------->
 -------------------------------------------------------------------->*/
 
+section.swiper-slide {
+	height: 90vh;
+	width: 100vw;
+}
+
+.main-content {
+	height: 90vh;
+	max-height: 90vh;
+}
 
 
+#visit {
+	background: $darkBlue;
+}
+
+#play {
+	background: $gapple;
+}
+
+.page {
+	.swiper-wrapper .page-item-container {
+		background-size: cover;
+	}
+
+	.page-item-content {
+		border-left: .625rem solid #fff;
+		padding: 2rem 1.5rem;
+		position: relative;
+		top: 10vh;
+	}
+
+	h3 {
+		font-weight: 700;
+		text-transform: uppercase;
+		margin: 0 0 .75rem;
+	}
+
+	header {
+		margin-bottom: 2rem;
+	}
+
+	.page-item-container {
+		background-size: cover;
+	}
+
+	.page-item-container .page-item-content {
+		position: relative;
+	}
+
+	.page-item-container:before {
+		background-color: $visitOverlay;
+		content:  "";
+		display: inline-block;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		opacity: .65;
+		top: 0;
+		width: 100%;
+	}
+
+}
+
+.page-item-container {
+	box-sizing: border-box;
+	color:  #fff;
+	height: 100%;
+	padding: 5vh 10vw;
+	width:  100vw;
+}
+
+
+
+/* visit section */
+.visit {
+
+	.korea {
+		background: url("./../imgs/korea.jpg") center no-repeat $boldBlue;
+	}
+
+	.haiti {
+		background: url("./../imgs/haiti.jpg") top left no-repeat $boldBlue;
+	}
+
+	.haiti:before {
+		opacity: .5;
+	}
+
+	.antarctica {
+		background: url("./../imgs/ice.jpg") top left no-repeat $boldBlue;
+	}
+
+	.page-item-container:before {
+		background-color: $visitOverlay;
+	}
+
+}
+
+.visit.swiper-slide {
+	width:  100vw;
+}
+
+
+/* play section */
+.play {
+	.quest {
+		background: url("./../imgs/horizontalVR.jpg") center no-repeat $boldBlue;
+	}
+
+	.minecraft {
+		background: url("./../imgs/mc.jpg") center no-repeat $boldBlue;
+	}
+
+	.among-us {
+		background: url("./../imgs/amongus.jpg") center no-repeat $boldBlue;
+	}
+
+	.page-item-container:before {
+		background-color: $violet;
+	}
+}
+
+
+/* play section */
+.create {
+
+	h3 {
+		font-size: 1.25rem;
+	}
+
+	.dev, .skillset {color: $gapple;}
+
+	.dev .page-item-content, .skillset ul {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.dev .page-item-content {
+		top: 25%;
+	}
+
+	.dev {
+		background: url("./../imgs/rose.jpeg") -21vw center no-repeat $gapple;
+	}
+
+	.skillset {
+		background: #fff;
+		display: flex;
+		flex-direction: column;
+		left: 5vw;
+		max-width: 90vw;
+	}
+
+	.skillset {
+		h3 {
+			font-size: 2rem;
+			text-align: center;
+			text-transform: unset;
+		}
+
+		ul {
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+
+		.page-item-content {
+			padding-top: 0;
+			top:  unset;
+		}
+
+		li {
+				background-size: contain;
+			box-sizing: content-box	;
+			display: inline-block;
+			height: 60px;
+			margin: 0 1rem 2.5rem;
+			position: relative;
+			width: 4rem;
+		}
+
+		li span {
+			bottom: -1.5rem;
+			left: 50%;
+			position: absolute;
+			transform: translateX(-50%);
+		}
+	}
+
+	.page-item-container:before {
+		background: #fff;
+		opacity: .35;
+	}
+
+	.page-item-container {
+		.page-item-content {
+			border:  none;
+		}
+
+		.heading {
+			text-transform: lowercase;
+		}
+
+		.heading span {
+			display: block;
+		}
+	}
+
+	.js {
+		background: url('../imgs/language_icons/js.svg') center no-repeat #fff;
+	}
+
+	.html {
+		background: url('../imgs/language_icons/html.svg') center no-repeat #fff;
+	}
+
+	.css {
+		background: url('../imgs/language_icons/css.svg') center no-repeat #fff;
+	}
+
+	.php {
+		background: url('../imgs/language_icons/php.svg') center no-repeat #fff;
+	}
+
+	.node {
+		background: url('../imgs/language_icons/node.svg') center no-repeat #fff;
+	}
+
+	.bootstrap {
+		background: url('../imgs/language_icons/boostrap.svg') center no-repeat #fff;
+	}
+
+}
 /*--------------------------------------------------------------->END MAIN CONTENT*/
 
 
@@ -187,16 +528,111 @@ body.noScroll {
 ------------------------------>FOOTER--------------->
 -------------------------------------------------------------------->*/
 
+footer {
+	background: var(--page-color);
+	height: 5vh;
+	position: fixed;
+	width: 100vw;
+	z-index: 3;
+}
 
+.footer-nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	text-align: center;
+}
+
+.footer-nav h2 {
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	padding: .25rem 1rem;
+}
+
+.footer-nav h2.current {
+	background: #fff;
+	color: var(--page-color);
+	font-weight: bold;
+}
+
+footer .author {
+	display: none;
+}
 
 /*--------------------------------------------------------------->END FOOTER*/
 
 
 
-/*-------------------------------------------------------------------->
+/*------------------------------------------------------------------->
 ------------------------------>RESPONVISE STYLES--------------->
--------------------------------------------------------------------->
+-------------------------------------------------------------------->*/
+/* 
+600 pixels to adjust ablet sizing */
+
+@media screen and (min-width: 475px) {
+	.page .swiper-wrapper .dev.page-item-container {
+		background-position: left;
+		background-size: auto;
+	}
+
+	.loading img {
+	    display: block;
+	    position: relative;
+	    max-width: 8rem;
+	    margin: auto;
+	    top: 25%;
+	}
+
+}
+
+@media screen and (min-width: 600px) {
+	.visual-nav {
+		padding: 5vh 1.5vw 0;
+	}
+
+	.visual-nav .visual-link {
+		box-sizing: border-box;
+		display: inline-block;
+		height: 90vh;
+		width: 32vw;
+	}
+
+	.visual-nav .background-img {
+		bottom: unset;
+		height: 90vh;
+		left:  50%;
+		object-fit: cover;
+		transform: translateX(-50%);
+		width: 33vw;
+	}
+
+	.visual-nav .play-link .background-img {
+		top: unset;
+	}
+
+	.visual-nav .visual-link:hover .background-img {
+		transform: scale(1.2) translateX(-40%);
+		/* left: unset; */
+	}
+
+	.visual-nav .author {
+		line-height: 3vh;
+	}
+}
 
 
+
+@media screen and (min-width: 900px) {
+	.create .dev .page-item-content{
+		display: block;
+		left: 15%;
+		top:  37%;
+	}
+
+	.page .swiper-wrapper .dev.page-item-container {
+		background-size: cover;
+	}
+}
 
 /*--------------------------------------------------------------->END RESPONVISE STYLES*/

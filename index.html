@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 	<link rel="stylesheet" href="assets/css/styles.min.css?v=1">
 	<!-- <link rel="stylesheet" href="assets/css/styles.min.css?v=1.3"> -->
-	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
 	<!-- <script src="assets/js/scripts.min.js?v=1.3" defer></script> -->
 	  <!-- Global site tag (gtag.js) - Google Analytics -->
 <!--	 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q26BBJHVVM"></script>
@@ -26,22 +26,34 @@
 	  gtag('config', 'G-Q26BBJHVVM');
 	</script> -->
 
-	<script async>
+	<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script src="assets/js/scripts.js" defer></script>
+	<style>
+		html {
+			--default: #13132e;
+			--visit: #121257;
+			--play: #610745;
+			--create: #a99458;
+		}
+	</style>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script> -->
+</head>
+<body class="no-JS">
+<script>
 	// ensures the page can run js. If not we won't hide the rest
 	if (document.body.classList.contains("noJS")) {
 		document.body.classList.remove("noJS")
 		document.body.classList.add("enableJS")
 	}
-	</script>
-	<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-	<script src="assets/js/scripts.js"></script>
-
-</head>
-<body class="no-JS noScroll">
+</script>
 <a href="#main-content" class="skip-btn">Skip to Main Content</a>
+<div class="loading">
+	<img alt="Loading" src="assets/imgs/loading.gif">
+	<p class="a11y-text">loading</p>
+</div>
 <span class="menu-button">
-	<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 34.424 24.3">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34.424 24.3">
 	  <g id="Group_23" data-name="Group 23" transform="translate(-261.5 -21.5)">
 	    <line id="Line_4" data-name="Line 4" x2="34.424" transform="translate(261.5 23.5)" fill="none" stroke="var(--menu-color)" stroke-width="4"/>
 	    <line id="Line_5" data-name="Line 5" x2="34.424" transform="translate(261.5 33.65)" fill="none" stroke="var(--menu-color)" stroke-width="4"/>
@@ -49,18 +61,18 @@
 	  </g>
 	</svg>
 </span>
-<nav id="visual=nav" class="visual-nav">
-	<div class="visit-visual-link visual-link">
+<nav id="visual=nav" class="visual-nav visible">
+	<div class="visit-link visual-link">
 		<img class="background-img" src="assets/imgs/korea.jpg">
 		<span class="background-overlay"></span>
 		<a href="#visit">where I would like to go</a>
 	</div>
-	<div class="play-visual-link visual-link">
+	<div class="play-link visual-link">
 		<img class="background-img" src="assets/imgs/verticalVR.jpg">
 		<span class="background-overlay"></span>
 		<a href="#play">what I like to play</a>
 	</div>
-	<div class="create-visual-link visual-link">
+	<div class="create-link visual-link">
 		<img class="background-img" src="assets/imgs/moonset.jpg">
 		<span class="background-overlay"></span>
 		<a href="#create">what I create</a>
@@ -70,30 +82,16 @@
 	</div>
 </nav>
 
-<article id="mainC-cntent" class="main-content"> 
+<article id="main-content" class="main-content"> 
 	<div class="swiper-wrapper">
-		<section id="visit" class="visit swiper-slide">
+		<section id="visit" class="visit page swiper-slide" data-hash="visit">
 			<div class="swiper-wrapper">
-				<div class="visit-item-container korea">
-					<header>
-						<h3 class="visit-item-header">Korea</h3>
-						<p class="visit-item-desc">Home to a few friends of mine, South Korea is high on the travel list</p>
-					</header>
-					<div class="visit-item-content">
-						<h3>Places To See</h3>
-						<ul>
-							<li>Seoul</li>
-							<li>Busan</li>
-						<li>My Friends</li>
-						</ul>
-						</div>
-					</div>
-					<div class="visit-item-container second">
-					<header>
-						<h3 class="visit-item-header">second</h3>
-						<p class="visit-item-desc">Home to a few friends of mine, South Korea is high on the travel list</p>
-					</header>
-					<div class="visit-item-content">
+				<div class="page-item-container korea swiper-slide">
+					<div class="page-item-content">
+						<header>
+							<h3 class="page-item-header">Korea</h3>
+							<p class="page-item-desc">Home to a few friends of mine, South Korea is high on the travel list</p>
+						</header>
 						<h3>Places To See</h3>
 						<ul>
 							<li>Seoul</li>
@@ -102,25 +100,116 @@
 						</ul>
 					</div>
 				</div>
+				<div class="page-item-container haiti swiper-slide">
+					<div class="page-item-content">
+						<header>
+							<h3 class="page-item-header">Haiti</h3>
+							<p class="page-item-desc">Beautiful Island, unique history, I'd love to learn more</p>
+						</header>
+						<h3>Places To See</h3>
+						<ul>
+							<li>Beaches</li>
+							<li>Mountains</li>
+							<li>Port-au-Prince</li>
+						</ul>
+					</div>
+				</div>
+				<div class="page-item-container antarctica swiper-slide">
+					<div class="page-item-content">
+						<header>
+							<h3 class="page-item-header">Antarctica</h3>
+							<p class="page-item-desc">The land of ice, one of a kind animal life, and lights that dance through the skies</p>
+						</header>
+						<h3>Places To See</h3>
+						<ul>
+							<li>Orcas</li>
+							<li>Icebergs</li>
+							<li>Southern Lights</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</section>
+		<section id="play" class="play page swiper-slide" data-hash="play">
+			<div class="swiper-wrapper">
+				<div class="page-item-container quest swiper-slide">
+					<div class="page-item-content">
+						<header>
+							<h3 class="page-item-header">Oculus Quest</h3>
+							<p class="page-item-desc">The first wireless vr device. I fell in love the first time I tried it.</p>
+						</header>
+						<h3>Games</h3>
+						<ul>
+							<li>Apex Construct</li>
+							<li>The Under Presents</li>
+							<li>Keep Talking and Nobody Explodes</li>
+						</ul>
+					</div>
+				</div>
+				<div class="page-item-container minecraft swiper-slide">
+					<div class="page-item-content">
+						<header>
+							<h3 class="page-item-header">Minecraft</h3>
+							<p class="page-item-desc">The classic.</p>
+						</header>
+						<h3>Versions</h3>
+						<ul>
+							<li>Java, the best.</li>
+							<li>Bedrock, the mobile.</li>
+							<li>Vr, the terrifying.</li>
+						</ul>
+					</div>
+				</div>
+				<div class="page-item-container among-us swiper-slide">
+					<div class="page-item-content">
+						<header>
+							<h3 class="page-item-header">Among Us</h3>
+							<p class="page-item-desc">Save the crew or sabotage them, the choice is up to you.</p>
+						</header>
+						<h3>ROLES</h3>
+						<ul>
+							<li>Imposter</li>
+							<li>Detective</li>
+							<li>Third Imposte- oh, no</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="create" class="create page swiper-slide" data-hash="create">
+			<div class="swiper-wrapper">
+				<div class="page-item-container dev swiper-slide">
+					<div class="page-item-content">
+						<h3 class="heading">web designer <span>& developer</span></h3>
 
-		<section id="play" class="play swiper-slide">
-			<div class="swiper-wrapper">
-			</div>
-		</section>
-		<section id="create" class="create swiper-slide">
-			<div class="swiper-wrapper">
-			</div>
+					</div>
+				</div>
+				<div class="page-item-container skillset swiper-slide">
+					<div class="page-item-content">
+						<h3 class="page-item-header">Skillset</h3>
+						<ul>
+							<li class="js"><span>js</span></li>
+							<li class="css"><span>css</span></li>
+							<li class="html"><span>html</span></li>
+							<li class="php"><span>php</span></li>
+							<li class="node"><span>nodejs</span></li>
+							<li class="bootstrap"><span>bootstrap</span></li>
+						</ul>
+					</div>
+				</div>
 		</section>
 	</div>
 </article>
 
+	<div class="visit-swiper-pagination pagination" data-slide='0'></div>
+	<div class="play-swiper-pagination pagination hidden" data-slide='1'></div>
+	<div class="create-swiper-pagination pagination hidden" data-slide='2'></div>
+
 <footer>
 	<nav class="footer-nav" id="footer-nav">
-		<h2 href="#visit" class="visit-footer-link">visit</h2>
-		<h2 href="#play" class="play-footer-link">play</h2>
-		<h2 href="#create" class="create-footer-link">create</h2>
+		<h2 class="visit-link" data-slide='0'>visit</h2>
+		<h2 class="play-link" data-slide='1'>play</h2>
+		<h2 class="create-link" data-slide='2'>create</h2>
 	</nav>
 	<h1 class="author">anaboo</h1>
 </footer>

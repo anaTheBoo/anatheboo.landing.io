@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="501" height="642" viewBox="0 0 501 642">
+  <g id="Group_28" data-name="Group 28" transform="translate(-1036 -4138)">
+    <circle id="Ellipse_6" data-name="Ellipse 6" cx="250.5" cy="250.5" r="250.5" transform="translate(1036 4279)" fill="#fff"/>
+    <g id="Group_27" data-name="Group 27" transform="translate(81.479 29)">
+      <path id="Path_11" data-name="Path 11" d="M5077.912,4400.925l-100,100,100,100" transform="translate(-3980 -0.129)" fill="none" stroke="#a99458" stroke-linecap="round" stroke-linejoin="round" stroke-width="23"/>
+      <path id="Path_12" data-name="Path 12" d="M4977.917,4400.925l100,100-100,100" transform="translate(-3666.63 -0.129)" fill="none" stroke="#a99458" stroke-linecap="round" stroke-linejoin="round" stroke-width="23"/>
+      <line id="Line_7" data-name="Line 7" x1="82.934" y2="200.018" transform="translate(1163.171 4400.5)" fill="none" stroke="#a99458" stroke-linecap="round" stroke-width="23"/>
+    </g>
+    <!-- <text id="HTML" transform="translate(1148 4248)" fill="#fff" font-size="116" font-family="Calibri"><tspan x="0" y="0">HTML</tspan></text> -->
+  </g>
+</svg>
