@@ -12,7 +12,7 @@
 
 ---------------> UNIVERSAL STYLES
 
----------------> VISUAL NAV
+---------------> HEADER/VISUAL NAV
 
 ---------------> MAIN CONTENT
 
@@ -181,8 +181,18 @@ body.no-scroll {
 
 
 /*-------------------------------------------------------------------->
------------------------------->VISUAL NAV--------------->
+------------------------------>HEADER/VISUAL NAV--------------->
 -------------------------------------------------------------------->*/
+
+
+.main-header {
+	background: #fff;
+	height: 5vh;
+	position: fixed;
+	top: 0;
+	width:  100vw;
+	z-index: 8;
+}
 
 .visual-nav {
 	background: #fff;
